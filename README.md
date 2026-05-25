@@ -204,27 +204,6 @@ npm run dev
 
 ---
 
-## 📂 Folder Structure
-
-```bash
-PrepTalk-AI/
-│
-├── images/
-│   ├── architecture.png
-│   ├── homepage.png
-│   ├── role-selection.png
-│   ├── interview-interface.png
-│   └── results-dashboard.png
-│
-├── frontend/
-├── backend/
-├── public/
-├── README.md
-└── package.json
-```
-
----
-
 ## 📖 What I Learned
 
 Through this project, I improved my understanding of:
