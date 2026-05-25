@@ -244,7 +244,7 @@ Through this project, I improved my understanding of:
 ### Bavana Priya
 
 - GitHub: https://github.com/D-Bavanapriya
-- LinkedIn: Add your LinkedIn profile link
+- LinkedIn: https://www.linkedin.com/in/bavanapriya-durai-babu-5971a9272/
 - Blog: Add your Hashnode/Medium blog link
 
 ---
