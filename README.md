@@ -94,6 +94,8 @@ PrepTalk AI creates an interactive AI interview ecosystem that:
 
 ## 🏗 System Architecture
 
+The architecture illustrates the end-to-end workflow of PrepTalk AI, including interview generation, candidate interaction, AI evaluation, and performance analytics.
+
 <img width="1536" height="1024" alt="architecture" src="https://github.com/user-attachments/assets/c9815155-10de-4a1d-beca-5da7ca503476" />
 
 
