@@ -94,7 +94,6 @@ PrepTalk AI creates an interactive AI interview ecosystem that:
 
 ## 🏗 System Architecture
 
-<img width="1905" height="749" alt="Interview results" src="https://github.com/user-attachments/assets/eeaf12e5-2ab9-4582-96c0-3cd4d6128db7" />
 <img width="1536" height="1024" alt="architecture" src="https://github.com/user-attachments/assets/c9815155-10de-4a1d-beca-5da7ca503476" />
 
 
@@ -127,18 +126,18 @@ PrepTalk AI uses Groq APIs for:
 
 ## 📸 Screenshots
 
-### 📊 Results Dashboard
-<img width="1905" height="749" alt="Interview results" src="https://github.com/user-attachments/assets/4e8319be-901a-4c2b-8fae-fad86904996a" />
+### 🏠 Homepage
 
+<img width="1904" height="865" alt="Home page" src="https://github.com/user-attachments/assets/11e15252-bd6f-4d8c-a4ee-20613a6591ad" />
 
 ### 🎯 Role Selection
 
 <img width="1755" height="791" alt="Interview setup" src="https://github.com/user-attachments/assets/8d8854dd-5b69-4452-9efb-999735d4a7f9" />
 
 
-### 🏠 Homepage
+### 📊 Results Dashboard
+<img width="1905" height="749" alt="Interview results" src="https://github.com/user-attachments/assets/4e8319be-901a-4c2b-8fae-fad86904996a" />
 
-<img width="1904" height="865" alt="Home page" src="https://github.com/user-attachments/assets/11e15252-bd6f-4d8c-a4ee-20613a6591ad" />
 
 ---
 
