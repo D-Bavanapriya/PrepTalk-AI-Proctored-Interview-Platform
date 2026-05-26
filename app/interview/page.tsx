@@ -400,8 +400,61 @@ export default function InterviewPage() {
 
   if (phase === 'briefing') {
     return (
-      <div>
-        {/* YOUR BRIEFING UI HERE */}
+      <div
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#07101f',
+          color: 'white',
+        }}
+      >
+        <div
+          style={{
+            padding: 40,
+            background: '#111827',
+            borderRadius: 20,
+            width: 500,
+          }}
+        >
+          <h1 style={{ marginBottom: 20 }}>
+            Interview Briefing
+          </h1>
+
+          <p style={{ marginBottom: 10 }}>
+            Role: {session.jobTitle}
+          </p>
+
+          <p style={{ marginBottom: 20 }}>
+            Questions: {total}
+          </p>
+
+          <button
+            onClick={() => {
+              setPhase('active');
+              setStarted(true);
+              setQStart(Date.now());
+
+              if (
+                mode === 'speech' &&
+                isSupported
+              ) {
+                startRecording();
+              }
+            }}
+            style={{
+              padding: '12px 24px',
+              borderRadius: 10,
+              border: 'none',
+              background: '#2563eb',
+              color: 'white',
+              cursor: 'pointer',
+            }}
+          >
+            Start Interview
+          </button>
+        </div>
       </div>
     );
   }
@@ -411,8 +464,193 @@ export default function InterviewPage() {
   // =========================
 
   return (
-    <div>
-      {/* YOUR FULL UI JSX HERE */}
+    <div
+      style={{
+        minHeight: '100vh',
+        background: '#07101f',
+        color: 'white',
+        padding: 20,
+      }}
+    >
+      <h1 style={{ marginBottom: 20 }}>
+        Interview Session
+      </h1>
+
+      {cq && (
+        <div
+          style={{
+            background: '#111827',
+            padding: 20,
+            borderRadius: 20,
+            marginBottom: 20,
+          }}
+        >
+          <h2 style={{ marginBottom: 10 }}>
+            {cq.text}
+          </h2>
+
+          <p>
+            Time Left: {fmt(timeLeft)}
+          </p>
+        </div>
+      )}
+
+      {phase === 'active' && (
+        <div
+          style={{
+            background: '#111827',
+            padding: 20,
+            borderRadius: 20,
+          }}
+        >
+          {mode === 'speech' ? (
+            <div>
+              <div
+                style={{
+                  minHeight: 120,
+                  padding: 16,
+                  background: '#1f2937',
+                  borderRadius: 10,
+                  marginBottom: 10,
+                }}
+              >
+                {transcript || interimText || 'Speak now...'}
+              </div>
+
+              <button
+                onClick={() => {
+                  if (isRecording) {
+                    stopRecording();
+                  } else {
+                    startRecording();
+                  }
+                }}
+                style={{
+                  padding: '10px 18px',
+                  borderRadius: 10,
+                  border: 'none',
+                  background: '#2563eb',
+                  color: 'white',
+                  cursor: 'pointer',
+                }}
+              >
+                {isRecording
+                  ? 'Stop Recording'
+                  : 'Start Recording'}
+              </button>
+            </div>
+          ) : (
+            <textarea
+              value={textAns}
+              onChange={(e) =>
+                setTextAns(e.target.value)
+              }
+              rows={6}
+              style={{
+                width: '100%',
+                padding: 14,
+                borderRadius: 10,
+                background: '#1f2937',
+                color: 'white',
+              }}
+            />
+          )}
+
+          <button
+            onClick={handleSubmit}
+            style={{
+              marginTop: 20,
+              padding: '12px 24px',
+              borderRadius: 10,
+              border: 'none',
+              background: '#16a34a',
+              color: 'white',
+              cursor: 'pointer',
+            }}
+          >
+            Submit Answer
+          </button>
+        </div>
+      )}
+
+      {/* FEEDBACK */}
+
+      {phase === 'feedback' && evalData && (
+        <div
+          style={{
+            marginTop: 30,
+            background: '#111827',
+            padding: 20,
+            borderRadius: 20,
+          }}
+        >
+          <h2 style={{ marginBottom: 15 }}>
+            Evaluation
+          </h2>
+
+          <p style={{ marginBottom: 10 }}>
+            Score:{' '}
+            {(evalData.score as number) ?? 0}
+          </p>
+
+          <p style={{ marginBottom: 20 }}>
+            {typeof evalData.feedback === 'string'
+              ? evalData.feedback
+              : ''}
+          </p>
+
+          {typeof evalData?.modelAnswer ===
+            'string' &&
+            evalData.modelAnswer.trim() !== '' && (
+              <div
+                style={{
+                  padding: '9px 12px',
+                  borderRadius: 8,
+                  background:
+                    'rgba(26,127,232,.06)',
+                  border:
+                    '1px solid rgba(26,127,232,.2)',
+                  marginBottom: 12,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 10,
+                    color: '#7dc1ff',
+                    fontWeight: 700,
+                    marginBottom: 4,
+                  }}
+                >
+                  💡 MODEL ANSWER HINT
+                </div>
+
+                <div
+                  style={{
+                    fontSize: 13,
+                    color: 'var(--text2)',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {evalData.modelAnswer}
+                </div>
+              </div>
+            )}
+
+          <button
+            onClick={goNext}
+            style={{
+              padding: '12px 24px',
+              borderRadius: 10,
+              border: 'none',
+              background: '#2563eb',
+              color: 'white',
+              cursor: 'pointer',
+            }}
+          >
+            Next Question
+          </button>
+        </div>
+      )}
 
       <style jsx>{`
         @keyframes coachIn {
