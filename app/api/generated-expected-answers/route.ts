@@ -1,5 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+}
+
+type SpeechRecognition = any;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
