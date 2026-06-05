@@ -2,14 +2,6 @@
 
 > Built for MEDO Hackathon · Powered by Gemini AI (Free)
 
-## Quick Start
-
-### 1. Install dependencies
-=======
-# PrepTalk AI
-
-## 🚀 AI-Powered Mock Interview & Interview Preparation Platform
-
 PrepTalk AI is an intelligent AI-powered interview preparation platform designed to help students and job seekers improve interview performance through AI-driven mock interviews, speech analysis, and performance evaluation.
 
 The platform simulates realistic interview environments, evaluates candidate responses, analyzes communication quality, and provides personalized feedback for improvement.
