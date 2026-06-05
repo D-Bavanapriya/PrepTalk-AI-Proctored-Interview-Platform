@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PrepTalk — AI Proctored Interview Platform v2.0
 
 > Built for MEDO Hackathon · Powered by Gemini AI (Free)
@@ -296,4 +295,4 @@ Through this project, I improved my understanding of:
 ## ⭐ Support
 
 If you found this project interesting, consider giving it a ⭐ on GitHub.
->>>>>>> 2971d9ebc80599e70654021a2d5fdaea23e9e6ce
+
